@@ -68,3 +68,16 @@ p {
 	transform: var(--translate);
 	text-shadow: var(--text-shadow);
 }
+
+
+
+  #my-div {
+	width: 3em;
+	height: 3em;
+	background-color: #ffffff36;
+	position: absolute; left:20px;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	box-shadow: 0 0 20px rgba(16, 0, 54, 0.2);
+	
+  }
