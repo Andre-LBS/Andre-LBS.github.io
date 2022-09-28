@@ -16,7 +16,7 @@ const mouse = {
 	y: undefined,
 };
 
-/*
+
 canvas.addEventListener("click", function (event) {
 	mouse.x = event.x;
 	mouse.y = event.y;
@@ -26,8 +26,9 @@ canvas.addEventListener("click", function (event) {
 			particlesArray.push(new Particle());
 		}
 	}
-});*/
+});
 
+/*
 canvas.addEventListener("mousemove", function (event) {
 	mouse.x = event.x;
 	mouse.y = event.y;
@@ -37,7 +38,7 @@ canvas.addEventListener("mousemove", function (event) {
 			particlesArray.push(new Particle());
 		}
 	}
-});
+});*/
 
 class Particle {
 	constructor() {
