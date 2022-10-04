@@ -6,11 +6,15 @@ const particlesArray = [];
 let hue = 0;
 let frame = 0;
 
+
+// make listener for window to resize according to res
 window.addEventListener("resize", function () {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 });
 
+
+// define mouse
 const mouse = {
 	x: undefined,
 	y: undefined,
@@ -29,6 +33,7 @@ canvas.addEventListener("click", function (event) {
 });*/
 
 
+// listener for when the mouse cursor is moving
 canvas.addEventListener("mousemove", function (event) {
 	mouse.x = event.x;
 	mouse.y = event.y;
@@ -40,6 +45,8 @@ canvas.addEventListener("mousemove", function (event) {
 	}
 });
 
+
+// particle script
 class Particle {
 	constructor() {
 		this.x = mouse.x;
@@ -49,11 +56,15 @@ class Particle {
 		this.speedY = Math.random() * 3 - 1.5;
 		this.color = "rgba(255,255,255,0.2)";
 	}
+
+	// update when cursor moves
 	update() {
 		this.x += this.speedX;
 		this.y += this.speedY;
 		if (this.size > 0.2) this.size -= 0.1;
 	}
+
+	// draw the things themselves
 	draw() {
 		ctx.fillStyle = this.color;
 		ctx.beginPath();
@@ -62,6 +73,8 @@ class Particle {
 	}
 }
 
+
+// Put it in a function
 function handleParticles() {
 	for (let i = 0; i < particlesArray.length; i++) {
 		for (let j = i; j < particlesArray.length; j++) {
@@ -88,6 +101,7 @@ function handleParticles() {
 	}
 }
 
+// Animate it
 function animate() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	//ctx.fillStyle = 'rgba(0,0,0,0.02)';
@@ -98,6 +112,9 @@ function animate() {
 }
 animate();
 
+
+
+// log it
 function swRegistration() {
 	const heart = ["font-size: 20px", "padding: 12px", "margin: 4px 0 4px 4px", "color: rgba(238,58,136,1)"].join(";");
 	if ("serviceWorker" in navigator) {
@@ -114,30 +131,4 @@ function swRegistration() {
 	}
 }
 
-function consoleText() {
-	console.clear();
-	const styles = [
-		"color: white",
-		"background: rgba(238,58,136,1)",
-		"font-size: 18px",
-		"padding: 12px",
-		"margin: 6px 0 6px 14px",
-	].join(";");
-	const styles2 = ["font-size: 14px", "padding: 16px", "margin: 6px 0 6px 0", "color: rgba(238,58,136,1)"].join(";");
-	console.log("%cHello World! I'm Emmanuel.", styles);
-	console.log("%cThank you for checking out my work!", styles2);
-	const gradient = [
-		"font-size: 14px",
-		"color: #fff",
-		"width: 200px",
-		"padding: 8px",
-		"margin: 6px 0 6px 14px",
-		"border-radius: 4px",
-		"background: rgba(238,58,136,1)",
-		"background: linear-gradient( 109.6deg, rgba(238,58,136,1) 11.2%, rgba(128,162,245,1) 91.1% )",
-	].join(";");
-
-}
-
 swRegistration();
-consoleText();
