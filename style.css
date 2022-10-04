@@ -27,6 +27,7 @@
 
 
 /* Main body */
+
 body {
 	margin: 0;
 	padding: 0;
@@ -76,8 +77,8 @@ a.button {
   .button:hover {background: rgb(0, 0, 0, 0.8);}
   
 
-/* Paragraph vis */
-p {
+/* Header vis */
+h1 {
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -95,3 +96,23 @@ p {
 }
 
 
+
+
+/* Paragraph vis */
+p {
+	height:15.5em;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: var(--text-color);
+	text-transform: uppercase;
+	font-size: 2em;
+	letter-spacing: 0.005em;
+	pointer-events: none;
+	text-align: center;
+	top: 570px;
+	left: -70px;
+	-webkit-transform: var(--translate);
+	transform: var(--translate);
+	text-shadow: var(--text-shadow);
+}
