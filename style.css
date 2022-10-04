@@ -46,6 +46,8 @@ body {
 }
 
 
+
+
 /* Cursor div */
 #my-div {
 	width: 3em;
@@ -100,7 +102,6 @@ h1 {
 
 /* Paragraph vis */
 p {
-	height:15.5em;
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -110,8 +111,8 @@ p {
 	letter-spacing: 0.005em;
 	pointer-events: none;
 	text-align: center;
-	top: 570px;
-	left: -70px;
+	top: 50%;
+	left: 50%;
 	-webkit-transform: var(--translate);
 	transform: var(--translate);
 	text-shadow: var(--text-shadow);
