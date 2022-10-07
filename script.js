@@ -35,7 +35,7 @@ canvas.addEventListener("click", function (event) {
 
 // listener for when the mouse cursor is moving
 canvas.addEventListener("mousemove", function (event) {
-	mouse.x = event.x;
+	mouse.x = event.x-90;
 	mouse.y = event.y;
 	hue += 2;
 	if (frame % 2 === 0) {
@@ -81,7 +81,7 @@ function handleParticles() {
 			const dx = particlesArray[i].x - particlesArray[j].x;
 			const dy = particlesArray[i].y - particlesArray[j].y;
 			const distance = Math.sqrt(dx * dx + dy * dy);
-			if (distance < 100) {
+			if (distance < 1) {
 				ctx.beginPath();
 				ctx.strokeStyle = particlesArray[i].color;
 				ctx.lineWidth = 0.2;
